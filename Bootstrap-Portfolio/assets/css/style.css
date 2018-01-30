@@ -184,4 +184,14 @@ button.bg-teal:hover {
 		width: 70%;
 		margin: 0 15% 10px 15%;
 	}
+
+	.image-holder {
+		width: 70%;
+		margin: 0 15% 20px 15%;
+	}
+
+	#logo {
+		position: relative;
+		bottom: 6px;
+	}
 }
