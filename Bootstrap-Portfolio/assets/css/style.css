@@ -181,7 +181,7 @@ button.bg-teal:hover {
 
 @media screen and (max-width: 768px) {
 	#profile-pic {
-		width: 100%;
-		margin-bottom: 10px;
+		width: 70%;
+		margin: 0 15% 10px 15%;
 	}
 }
