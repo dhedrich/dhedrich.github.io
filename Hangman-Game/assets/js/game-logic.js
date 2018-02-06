@@ -18,6 +18,7 @@ document.onkeyup = function (event) { // main game logic, fires on lowercase let
   var hiddenCount = 0
 
   if (inPlay && /^[a-z]{1}/.test(guess)) { // if game is active, use regex to check that guess is a single lowercase letter
+    $('#bank-' + guess).text("_"); // update letter bank to remove used letters
     if (activeWord.includes(guess)) { // determine whether guess is in active word, update letter guess section or decrement remaining guesses appropriately
       for (i = 0; i < activeWord.length; i++) {
         if (guess === activeWord[i]) {
@@ -26,7 +27,6 @@ document.onkeyup = function (event) { // main game logic, fires on lowercase let
           arr[i].setAttribute("class", letterPosition + " revealed") // change class of revealed letter to its identity
         }
       }
-      $('#bank-' + guess).text("_"); // update letter bank to remove used letters
       for (i = 0; i < activeWord.length; i++) {
         if (arr[i].innerText === "_") { // increment variable that counts remaining hidden letters
           hiddenCount++
