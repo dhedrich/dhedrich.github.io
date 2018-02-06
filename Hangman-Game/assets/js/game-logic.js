@@ -3,8 +3,8 @@ var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
 var newGameButton = document.getElementById("new-game")
 
 // add event listeners to New Game button and space bar
-newGameButton.addEventListener("click", newGame)
-document.addEventListener("keyup", function (event) {
+newGameButton.addEventListener("click", newGame) // new game button event listener
+document.addEventListener("keyup", function (event) { // space bar event listener
   if (event.key === " ") {
     newGame()
   }
@@ -12,11 +12,40 @@ document.addEventListener("keyup", function (event) {
 
 newGame()
 
-document.onkeyup = function (event) { // main game logic, fires on lowercase letter key input
+document.onkeyup = function (event) { // fire game logic function on lowercase letter keyup
   var guess = event.key
   var arr = document.querySelectorAll("h3")
   var hiddenCount = 0
+  runGameLogic(guess, hiddenCount, arr)
+}
 
+//---------------------- define all functions below this line -------------------------
+
+function newGame() { // clears and sets new active word, fills underscores into letter guess section
+  animateBG()
+  inPlay = true
+  clearAll()
+  setWord()
+  setGuesses(5)
+  setLetterButtons()
+  $('.wrapper').removeClass("inverse")
+  $(".ParalaxImage1").attr("class", "ParalaxImage1")
+  for (i = 0; i < activeWord.length; i++) {
+    var node = document.createElement("h3")
+    var textNode = document.createTextNode("_")
+    node.appendChild(textNode)
+    document.getElementById("letter-section").appendChild(node)
+  }
+
+  var arr = document.querySelectorAll("h3")
+
+  for (i = 0; i < arr.length; i++) { // set class of "letter-" + letter for each h3 in #letter-section div
+    letterPosition = "letter-" + activeWord[i]
+    arr[i].setAttribute("class", letterPosition + ' hidden')
+  }
+}
+
+function runGameLogic(guess, hiddenCount, arr) { // main game logic, open for details
   if (inPlay && /^[a-z]{1}/.test(guess)) { // if game is active, use regex to check that guess is a single lowercase letter
     $('#bank-' + guess).text("_"); // update letter bank to remove used letters
     if (activeWord.includes(guess)) { // determine whether guess is in active word, update letter guess section or decrement remaining guesses appropriately
@@ -58,28 +87,14 @@ document.onkeyup = function (event) { // main game logic, fires on lowercase let
   }
 }
 
-//---------------------- define all functions below this line -------------------------
-
-function newGame() { // clears and sets new active word, fills underscores into letter guess section
-  animateBG()
-  inPlay = true
-  clearAll()
-  setWord()
-  setGuesses(5)
-  $('.wrapper').removeClass("inverse")
-  $(".ParalaxImage1").attr("class", "ParalaxImage1")
-  for (i = 0; i < activeWord.length; i++) {
-    var node = document.createElement("h3")
-    var textNode = document.createTextNode("_")
-    node.appendChild(textNode)
-    document.getElementById("letter-section").appendChild(node)
-  }
-
-  var arr = document.querySelectorAll("h3")
-
-  for (i = 0; i < arr.length; i++) { // set class of "letter-" + letter for each h3 in #letter-section div
-    letterPosition = "letter-" + activeWord[i]
-    arr[i].setAttribute("class", letterPosition + ' hidden')
+function setLetterButtons() { // add event listeners to letters in bank to allow for clicking to fire game logic function
+  for (i = 0; i < alphabet.length; i++) {
+    document.getElementById('bank-' + alphabet[i]).onclick = function () { // fire game logic function on bank letter click
+      var guess = this.innerText[0].toLowerCase() // using index 0 to grab letter without space
+      var arr = document.querySelectorAll("h3")
+      var hiddenCount = 0
+      runGameLogic(guess, hiddenCount, arr)
+    }
   }
 }
 
