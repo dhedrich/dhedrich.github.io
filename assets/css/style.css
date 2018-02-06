@@ -149,6 +149,10 @@ header {
     font-family: 'Georgia', Times, Times New Roman, serif;
 }
 
+.caption a {
+    text-decoration: none;
+    color: #ffffff;
+}
 .portfolio img {
     width: 100%;
 }

@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "Saiyan-Sans";
+  src: url("../fonts/Saiyan-Sans.ttf");
+}
+
+@font-face {
+  font-family: "Saiyan-Sans-Right";
+  src: url("../fonts/Saiyan-Sans-Right.ttf");
+}
+
+@font-face {
+  font-family: "Saiyan-Sans-Left";
+  src: url("../fonts/Saiyan-Sans-Left.ttf");
+}
+
+h3 {
+  display: inline-block;
+  margin:0 3px;
+}
+
+#bg {
+  background: url('../images/dragonball-banner.jpg');
+  background-size: 200vh;
+  height:100%;
+  width:100%;
+}
+
+
+body, html {
+  height:100%;
+  margin:0;
+  font-size:16px;
+  font-family: "Saiyan-Sans", "Lato", sans-serif;
+  font-weight:400;
+  line-height:1.8em;
+  color:#666;
+}
+
+.ParalaxImage1, .ParalaxImage2, .ParalaxImage3 {
+  position:relative;
+  /* opacity:0.85; */
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background-attachment:fixed;
+  transition: 0.3s;
+}
+
+.ParalaxImage1 {
+  min-height:50vh;
+}
+
+.section {
+  text-align:center;
+  padding:50px 80px;
+}
+
+.section-dark {
+  background-color:#282e34;
+  color:#ddd;
+  padding: 10px;
+  -webkit-box-shadow: 0px 162px 5px 16px #282e34;
+  -moz-box-shadow: 0px 162px 5px 16px #282e34;
+  box-shadow: 0px 162px 5px 16px #282e34;
+}
+
+.btn {
+  border-radius:30px 30px 30px 30px;
+  font-size: 28px;
+  font-family: "Saiyan-Sans" !important;
+}
+
+.btn:hover {
+  background-color: orange;
+}
+
+.ptext {
+  position:absolute;
+  top:50%;
+  width:100%;
+  text-align:center;
+  color:#000;
+  font-size:27px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+}
+
+#letter-section {
+  border-radius:50px;
+  font-family: sans-serif;
+  border: 2px solid #fff;
+  -webkit-box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.8);
+  -moz-box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.8);
+  box-shadow: 2px 2px 7px 0px rgba(0,0,0,0.8);
+}
+
+
+.ptext .border {
+  background-color:#111;
+  color:#fff;
+  padding:20px;
+}
+
+#letter-bank-title {
+  margin-bottom: 20px;
+  border-bottom: solid 1px #ddd;
+  padding-bottom: 10px;
+}
+
+#letter-bank {
+  padding-bottom:20px;
+}
+
+.bank-letter {
+  font-size: 26px;
+  /* border: 1px solid #666; */
+  margin: 5px;
+  font-family: sans-serif;
+}
+
+.dragon-ball {
+  color: orange;
+  font-family: "Saiyan-Sans"
+}
+
+#guesses {
+  font-family: sans-serif;
+}
+
+#guesses .dragon-ball {
+  font-size:24px;
+}
+
+#left {
+  font-family: "Saiyan-Sans-Left";
+}
+
+#right {
+  font-family: "Saiyan-Sans-Right";
+}
+
+.col-md-6 {
+  padding: 0 0 20px 0;
+}
+
+.inverse {
+  filter: invert(100%);
+  transition: 0.3s;
+}
