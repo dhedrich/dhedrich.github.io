@@ -15,8 +15,7 @@ newGame()
 document.onkeyup = function (event) { // fire game logic function on lowercase letter keyup
   var guess = event.key
   var arr = document.querySelectorAll("h3")
-  var hiddenCount = 0
-  runGameLogic(guess, hiddenCount, arr)
+  runGameLogic(guess, arr)
 }
 
 //---------------------- define all functions below this line -------------------------
@@ -45,7 +44,7 @@ function newGame() { // clears and sets new active word, fills underscores into 
   }
 }
 
-function runGameLogic(guess, hiddenCount, arr) { // main game logic, open for details
+function runGameLogic(guess, arr) { // main game logic, open for details
   if (inPlay && /^[a-z]{1}/.test(guess)) { // if game is active, use regex to check that guess is a single lowercase letter
     $('#bank-' + guess).text("_"); // update letter bank to remove used letters
     if (activeWord.includes(guess)) { // determine whether guess is in active word, update letter guess section or decrement remaining guesses appropriately
@@ -56,11 +55,6 @@ function runGameLogic(guess, hiddenCount, arr) { // main game logic, open for de
           arr[i].setAttribute("class", letterPosition + " revealed") // change class of revealed letter to its identity
         }
       }
-      for (i = 0; i < activeWord.length; i++) {
-        if (arr[i].innerText === "_") { // increment variable that counts remaining hidden letters
-          hiddenCount++
-        }
-      }
 
       var hidden = $('.hidden') // create array of hidden letter elements to check for duplicates
       var hiddenNames = []
@@ -68,7 +62,7 @@ function runGameLogic(guess, hiddenCount, arr) { // main game logic, open for de
         hiddenNames.push(hidden[i].className)
       }
 
-      if (hiddenCount === 0 || (hiddenCount === 1 && duplicateCheck(hiddenNames))) { // win condition, change game status to inactive
+      if (hiddenNames.length === 0 || (hiddenNames.length === 1 && duplicateCheck(hiddenNames))) { // win condition, change game status to inactive
         scrollBG(activeWord)
         inPlay = false
       }
@@ -92,8 +86,7 @@ function setLetterButtons() { // add event listeners to letters in bank to allow
     document.getElementById('bank-' + alphabet[i]).onclick = function () { // fire game logic function on bank letter click
       var guess = this.innerText[0].toLowerCase() // using index 0 to grab letter without space
       var arr = document.querySelectorAll("h3")
-      var hiddenCount = 0
-      runGameLogic(guess, hiddenCount, arr)
+      runGameLogic(guess, arr)
     }
   }
 }
