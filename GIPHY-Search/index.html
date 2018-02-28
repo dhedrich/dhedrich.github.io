@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <!-- Material UI Kit/Bootstrap 4 -->
+    <link rel="stylesheet" href="assets/css/material-kit.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+        crossorigin="anonymous">
+
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <title>GIPHY Search</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-primary fixed-top">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="#">
+                    <img class="dev-logo" src="assets/images/giphy_logo.gif">GIPHY Search
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row search-form">
+                        <form class="col-md-9" id="search-container">
+                            <div class="form-group">
+                                <label for="search-box" class="bmd-label-floating">Enter Search Term</label>
+                                <input type="text" class="form-control" id="search-box">
+                                <span class="bmd-help">Your searches will be saved in the list to the right.</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm submit">Submit</button>
+                        </form>
+                        <form action="" class="col-md-3" id="num-container">
+                            <div class="form-group">
+                                <label for="results-num"></label>
+                                <select class="form-control" id="results-num">
+                                    <option># Results</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="row submit-container">
+                        
+                    </div>
+                    <div class="row search-results">
+                        <div id="gif-container"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 search-queries">
+                    <h4>CLICK TO SEARCH</h4>
+                    <div id="search-buttons"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jQuery and Bootstrap 4 -->
+    <script src="assets/js/core/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+
+    <!-- Core UI Kit JS files -->
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/bootstrap-material-design.js"></script>
+
+    <!-- Plugin for Date Time Picker and Full Calendar Plugin-->
+    <script src="assets/js/plugins/moment.min.js"></script>
+
+    <!-- Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="assets/js/plugins/nouislider.min.js"></script>
+
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="assets/js/material-kit.js"></script>
+
+    <!-- Application functionality and logic -->
+    <script src="assets/js/logic.js"></script>
+</body>
+
+</html>
