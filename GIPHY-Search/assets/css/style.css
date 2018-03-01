@@ -90,7 +90,6 @@ h4 {
 
 .return-gif {
     width: 100% !important;
-    margin: 10px;
 }
 
 .imageHolder {
@@ -113,7 +112,6 @@ h4 {
     background:#9c27b0;
     text-align: center;
     transition: 0.2s;
-    margin: 10px;
     font-family: default;
     font-weight: bold;
 }
