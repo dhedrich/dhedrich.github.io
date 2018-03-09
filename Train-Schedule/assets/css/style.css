@@ -1,0 +1,14 @@
+.jumbotron,
+.card-header,
+.btn {
+    background-color: #003366;
+    color: white;
+}
+
+p {
+    font-weight: bold;
+}
+
+.entry-text {
+    line-height: 300%;
+}
