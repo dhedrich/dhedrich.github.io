@@ -1,6 +1,3 @@
-
-
-
 /*------- Smooth Scroll -------*/
 
 $('a[href^="#"]').on('click', function(event) {
@@ -13,8 +10,13 @@ $('a[href^="#"]').on('click', function(event) {
             scrollTop: target.offset().top
         }, 1000);
     }
-
+    
 });
+
+/*------- Gallery Image Select -------*/
+$('.item').click(function() {
+  $(this).toggleClass('active')
+})
 
 
 

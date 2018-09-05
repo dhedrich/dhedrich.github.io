@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 @import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
@@ -22,6 +21,10 @@ h1, h2, h3, h4, h5 {
 .btn-capsul {
 	border-radius: 30px;
 }
+.btn-center {
+	margin: 0 auto;
+	margin-top: 50px;
+}
 .btn-aqua {
 	background: #A4C2A8;
 	color: #fff;
@@ -37,6 +40,10 @@ h1, h2, h3, h4, h5 {
 .btn-dark-blue:hover {
 	background: #063d28;
 	color: #fff;
+}
+.btn-transparent-black {
+	border: 2px solid #000;
+	color: #000;
 }
 .btn-transparent-white {
 	border: 2px solid #fff;
@@ -62,8 +69,8 @@ section {
 
 .navbar.top-bar {
 	border-radius: 0;
-	padding: 16px 0;
-	z-index: 16;
+	padding: 6px 0;
+	z-index: 6;
 }
 .navbar-toggler {
 	border: 1px solid #fff;
@@ -80,11 +87,18 @@ section {
 	width: 100%;
 }
 .sps--abv {
-	background-color: transparent;
+	/* background-color: transparent; */
+	/* background-color: black; */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
+	background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 	color: #000;
 }
 .sps--blw {
-	background-color: #fff;
+	/* background-color: #fff; */
+	background: #fff;
 	color: #fff;
 }
 .top-bar a.navbar-brand {
@@ -92,10 +106,12 @@ section {
 	font-size: 26px;
 	font-weight: 800;
 	padding: 5px 0 0 10px;
+	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.85);
 	text-transform: uppercase;
 }
 .sps--blw.top-bar a.navbar-brand {
 	color: #000;
+	text-shadow: 0px 0px 5px rgba(255, 255, 255, 0);
 }
 .top-bar a.navbar-brand span {
 	color: #A4C2A8;
@@ -267,7 +283,7 @@ section {
 .about-sec h2 {
 	font-size: 55px;
 	font-weight: 800;
-	margin-top: 25%;
+	margin-top: 15%;
 }
 .about-sec h2 small {
 	display: block;
@@ -323,8 +339,16 @@ section {
 	margin-top: 30px;
 }
 
-/* CONTACT SECTION
+/* CONTACT/MAPS SECTION
 -------------------------------------------------- */
+#map{
+	height: 300px;
+	width: 100%;
+	-webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.55);
+	-moz-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.55);
+	box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.55);
+	/* border: 1px solid black; */
+}
 .contact-sec {
 	/* background: url('http://grafreez.com/wp-content/temp_demos/burnout/img/para-01.jpg') no-repeat center center; */
 	background: url('../img/house-symmetric.jpg') no-repeat center center;
@@ -337,9 +361,10 @@ section {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background: rgba(229, 212, 192, 0.85);
+	/* z-index: 4; */
+	background-color: rgba(229, 212, 192, 0.85);
 	top: 0;
-	left: 0
+	left: 0;
 }
 .contact-sec h2 {
 	font-size: 55px;
@@ -358,10 +383,24 @@ section {
 
 /* FOOTER SECTION
 -------------------------------------------------- */
+.img-container {
+	width:100%;
+	height:100%;
+}
+.img-container {
+
+}
 .footer-sec{
 	width: 100%;
 	float: left;
 	background: #495159
+}
+.footer-sec h3{
+	color: #fff;
+	text-align: right;
+}
+.recommended-homes {
+	text-align: left;
 }
 .footer-box{
 	float: left;
@@ -371,6 +410,92 @@ section {
 .footer-box h2{
 	color: #fff;
 	font-size: 20px;
+}
+.footer-text {
+	font-size:10px;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 50px;
+}
+/*=========================
+  Icons
+ ================= */
+
+/* footer social icons */
+ul.social-network {
+	list-style: none;
+	display: inline;
+	margin-left:0 !important;
+	padding: 0;
+	float: right;
+}
+ul.social-network li {
+	display: inline;
+	margin: 0 5px;
+}
+
+
+/* footer social icons */
+.social-network a:hover {
+	transition: 0.2s;
+}
+.social-network a.icoYouTube:hover {
+	background-color: rgb(209, 0, 0);
+}
+.social-network a.icoFacebook:hover {
+	background-color:#3B5998;
+}
+.social-network a.icoInstagram:hover {
+	background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+	background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+	background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+}
+.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i,
+.social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
+	color:#fff;
+}
+a.socialIcon:hover, .socialHoverClass {
+	color:#44BCDD;
+}
+
+.social-circle li a {
+	border: 1px solid #fff;
+	display:inline-block;
+	position:relative;
+	margin:0 auto 0 auto;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	border-radius:50%;
+	text-align:center;
+	width: 50px;
+	height: 50px;
+	font-size:20px;
+}
+.social-circle li i {
+	margin:0;
+	line-height:50px;
+	text-align: center;
+}
+
+.social-circle li a:hover i, .triggeredHover {
+	-moz-transform: rotate(360deg);
+	-webkit-transform: rotate(360deg);
+	-ms--transform: rotate(360deg);
+	transform: rotate(360deg);
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	transition: all 0.2s;
+}
+.social-circle i {
+	color: #fff;
+	-webkit-transition: all 0.8s;
+	-moz-transition: all 0.8s;
+	-o-transition: all 0.8s;
+	-ms-transition: all 0.8s;
+	transition: all 0.8s;
 }
 /**
  * Swiper 3.4.0
