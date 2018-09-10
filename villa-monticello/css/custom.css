@@ -4,9 +4,15 @@
 /* GLOBAL STYLES
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
-
+.separator {
+	height: 45px;
+	width: 100%;
+	background: #b38d3a;
+	border-bottom:18px solid #402c00;
+}
 body {
 	color: #5a5a5a;
+	background-color: #fff0e3;
 	font-family: 'Lato', sans-serif;
 }
 h1, h2, h3, h4, h5 {
@@ -26,7 +32,7 @@ h1, h2, h3, h4, h5 {
 	margin-top: 50px;
 }
 .btn-aqua {
-	background: #A4C2A8;
+	background: #b38d3a;
 	color: #fff;
 }
 .btn-aqua:hover {
@@ -51,7 +57,7 @@ h1, h2, h3, h4, h5 {
 }
 .btn-transparent-white:hover, .btn-transparent-white:focus {
 	background: #fff;
-	color: #A4C2A8
+	color: #402c00
 }
 .relative-box {
 	position: relative
@@ -59,9 +65,50 @@ h1, h2, h3, h4, h5 {
 section {
 	float: left;
 	width: 100%;
-	padding: 80px 0;
+	padding: 60px 0;
+}
+.section-heading {
+	margin-bottom: 70px;
+	display: flex;
+	align-items: center;
+}
+.section-content h3{
+	padding: 0 21px;
 }
 
+.section-heading-img {
+	display: flex;
+	align-items: center;
+}
+
+.first-sec {
+	margin-top:50px;
+}
+
+.form-container {
+	border: 8px solid #b38d3a;
+	color: #fff;
+	background: #402c00;
+	width:100%;
+	padding: 20px;
+	/* margin: 0 20px; */
+}
+
+.form-control {
+	border-radius: 0;
+	background: #fff0e3;
+}
+
+.text-muted {
+	color: #b38d3a !important;
+}
+#submit:hover {
+	color: #b38d3a;
+	background: #fff;
+}
+.obvi-link {
+	text-decoration: underline;
+}
 
 /* TOP HEADER
 -------------------------------------------------- */
@@ -71,12 +118,24 @@ section {
 	border-radius: 0;
 	padding: 6px 0;
 	z-index: 6;
+	border-bottom: 8px solid #402c00;
 }
 .navbar-toggler {
-	border: 1px solid #fff;
-	color: #fff;
+	/* width: 30px; */
 	position: absolute;
+	top: 8px;
 	right: 21px;
+	color: #000;
+	border: none;
+	color: #402c00;
+}
+
+.navbar-toggler:focus {
+	outline: none;
+}
+
+.navbar-toggler-icon i{
+	margin-top:5px;
 }
 .sps {
 	padding: 1em .5em;
@@ -85,153 +144,93 @@ section {
 	left: 0;
 	transition: all 0.25s ease;
 	width: 100%;
-}
-.sps--abv {
-	/* background-color: transparent; */
-	/* background-color: black; */
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
-	background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 	color: #000;
+	background: #fff0e3;
 }
-.sps--blw {
-	/* background-color: #fff; */
-	background: #fff;
-	color: #fff;
-}
+
+
 .top-bar a.navbar-brand {
-	color: #fff;
+	/* color: #fff; */
 	font-size: 26px;
 	font-weight: 800;
 	padding: 5px 0 0 10px;
-	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.85);
+	/* text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.85); */
 	text-transform: uppercase;
 }
-.sps--blw.top-bar a.navbar-brand {
+.sps.top-bar a.navbar-brand {
 	color: #000;
 	text-shadow: 0px 0px 5px rgba(255, 255, 255, 0);
 }
 .top-bar a.navbar-brand span {
-	color: #A4C2A8;
+	color: #b38d3a;
 }
 .top-bar .nav-link {
-	color: #fff;
-	font-size: 16px;
+	/* color: #fff; */
+	font-size: 14px;
 	font-weight: 500;
 	padding: 12px 18px!important;
 }
-.sps--blw.top-bar .nav-link {
+.top-bar .nav-link {
 	color: #000
 }
 .top-bar .navbar-nav .nav-item {
 	margin: 0
 }
 .top-bar .nav-link:hover, .top-bar .nav-item.active {
-	color: #fff;
-	border-bottom: 2px solid #A4C2A8;
+	color: #b38d3a;
+	border-bottom: 2px solid #b38d3a;
 	border-radius: 0;
 }
+.nav-item.active:hover {
+	border: none;
+}
+
+.nav-item a {
+	overflow: hidden;
+}
 .sps--blw.top-bar .nav-link:hover {
-	color: #A4C2A8;
-	border-bottom: none;
+	color: #b38d3a;
 	border-radius: 0;
 }
 
 .sps--blw.top-bar .nav-item.active {
 	color: #000;
-	border-bottom: none;
 	border-radius: 0;
 }
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
 
-/*Swiper*/
-.swiper-container {
-	width: 100%;
-	height: 100vh;
+.dropdown-menu {
+	background: #fff0e3;
 }
-.swiper-slide {
-	text-align: center;
-	font-size: 18px;
-	background: #fff;
-	/* Center slide text vertically */
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-ms-flex-pack: center;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	-webkit-align-items: center;
-	align-items: center;
-}
-.main-slider .slider-bg-position {
-	background-size: cover!important;
-	background-position: center center!important;
-}
-.main-slider .swiper-button-prev, .main-slider .swiper-button-next {
-	background-image: none!important;
+.dropdown-item:hover {
+	transition: 0.2s;
+	background: #b38d3a;
 	color: #fff;
-	width: 50px;
-	height: 50px;
-	border: 1px solid #fff;
-	text-align: center;
-	line-height: 50px;
-	font-size: 20px;
-}
-.main-slider h2 {
-	color: #fff;
-	font-size: 54px;
-	line-height: 59px;
-	padding: 0 19%;
-	text-transform: uppercase;
-}
-.main-slider .swiper-pagination-bullet {
-	width: 20px;
-	height: 20px;
-	background: rgba(255,255,255,0.9)
-}
-.main-slider .swiper-pagination-bullet-active {
-	background: #A4C2A8
 }
 
-/* INSTAGRAM SECTION
--------------------------------------------------- */
-.insta-sec {
-	/* background: url('http://grafreez.com/wp-content/temp_demos/burnout/img/para-01.jpg') no-repeat center center; */
-	background: url('../img/road.jpg') no-repeat center center;
-	background-size: cover;
-	color: #fff;
-	position: relative;
+.dropdown:hover .dropdown-menu {
+	display:block;
 }
-.insta-sec:before {
-	content: ' ';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: rgba(185, 115, 117, 0.85);
-	top: 0;
-	left: 0
+
+.dropdown-divider {
+	border-color: #402c00;
 }
+
 /* SERVICES SECTION
 -------------------------------------------------- */
+.service-logo {
+}
 
 .service-sec .heading {
 	float: left;
 	width: 100%;
-	margin-bottom: 70px;
+	/* margin-bottom: 70px; */
 	text-align:center;
 }
 .service-sec h2 {
 	display: block;
 	text-transform: capitalize;
 	font-weight: 600;
-	color: #A4C2A8;
+	color: #b38d3a;
 	font-size: 32px;
 }
 .service-sec h2 small {
@@ -241,12 +240,12 @@ section {
 	margin-bottom: 18px;
 }
 .service-sec i {
-	border: 1px solid #A4C2A8;
+	border: 1px solid #402c00;
 	border-radius: 2px;
 	font-size: 25px;
 	padding: 12px 0;
 	width: 52px;
-	color: #A4C2A8;
+	color: #402c00;
 	margin-bottom: 20px
 }
 .service-sec h3 {
@@ -254,13 +253,14 @@ section {
 	font-weight: 600;
 }
 .service-sec p {
-	line-height: 22px;
-	margin-top: 13px;
+	line-height: 26px;
+	margin: 32px 0;
 	padding: 0 21px;
 }
 .service-sec .service-block {
 	margin-top: 30px;
 }
+
 
 /* ABOUT SECTION
 -------------------------------------------------- */
@@ -387,17 +387,16 @@ section {
 	width:100%;
 	height:100%;
 }
-.img-container {
-
-}
 .footer-sec{
 	width: 100%;
 	float: left;
-	background: #495159
+	background: #402c00
 }
 .footer-sec h3{
 	color: #fff;
-	text-align: right;
+	text-align: center;
+	color: #b38d3a;
+	/* font-weight: bold; */
 }
 .recommended-homes {
 	text-align: left;
@@ -418,6 +417,14 @@ section {
 	margin: 0 auto;
 	padding-top: 50px;
 }
+.line {
+	color: #fff;
+	/* padding: 0 5%; */
+	text-align: center;
+	padding-bottom: 20px;
+
+}
+
 /*=========================
   Icons
  ================= */
@@ -425,17 +432,15 @@ section {
 /* footer social icons */
 ul.social-network {
 	list-style: none;
-	display: inline;
+	display: flex;
+	justify-content: center;
 	margin-left:0 !important;
 	padding: 0;
-	float: right;
 }
 ul.social-network li {
 	display: inline;
 	margin: 0 5px;
 }
-
-
 /* footer social icons */
 .social-network a:hover {
 	transition: 0.2s;
@@ -458,7 +463,6 @@ ul.social-network li {
 a.socialIcon:hover, .socialHoverClass {
 	color:#44BCDD;
 }
-
 .social-circle li a {
 	border: 1px solid #fff;
 	display:inline-block;
@@ -477,7 +481,6 @@ a.socialIcon:hover, .socialHoverClass {
 	line-height:50px;
 	text-align: center;
 }
-
 .social-circle li a:hover i, .triggeredHover {
 	-moz-transform: rotate(360deg);
 	-webkit-transform: rotate(360deg);

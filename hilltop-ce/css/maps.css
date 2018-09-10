@@ -4,9 +4,9 @@ a {color: #000;}
 
 a:link{text-decoration:none;}
 
-.box1{background: #A4C2A8;}
+.box1{background: #b38d3a;}
 .box2{background: #495159;}
-.box3{background: rgb(255, 212, 164);}
+.box3{background: #E5D4C0;}
 
 #author a{
   color: #fff;
@@ -23,10 +23,4 @@ a:link{text-decoration:none;}
 .text-center {
     z-index: 20;
     position: relative;
-    /* font-weight: bold; */
 }
-
-/* .contact-sec h1 {
-    z-index: 25;
-    position: relative;
-} */

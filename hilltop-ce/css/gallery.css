@@ -40,6 +40,7 @@
   }
   
   .item img {
+    /* border: 5px solid #183600; */
     max-width: 100%;
     height: auto;
     width: 100%;
@@ -69,7 +70,7 @@
     height:48px;
     text-align:center;
     line-height:48px;
-    z-index:12;
+    /* z-index:12; */
   }
   
   .item.active img {

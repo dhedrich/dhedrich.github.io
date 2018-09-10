@@ -1,4 +1,37 @@
 /*------- Smooth Scroll -------*/
+var photoArr = [
+  "backyard-charms",
+  "branch",
+  "canopy",
+  "front-arch",
+  "front-fence",
+  "front-porch",
+  "front-sun-tree",
+  "front-table",
+  "hanging-flower",
+  "lady-puppy",
+  "landscape",
+  "backyard-house",
+  "backyard-green",
+  "hilltop-1"
+]
+
+function shuffleArray(array) {
+  for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+  }
+}
+
+shuffleArray(photoArr)
+
+for (i in photoArr) {
+  $("#masonry").append(`<div class="item"><img src="./img/${photoArr[i]}.jpg" alt=""></div>`)
+}
+
+/*------- Smooth Scroll -------*/
 
 $('a[href^="#"]').on('click', function (event) {
 
@@ -15,40 +48,28 @@ $('a[href^="#"]').on('click', function (event) {
 
 /*------- Gallery Image Select -------*/
 $('.item').click(function () {
-  $(this).toggleClass('active');
-});
+  $(this).toggleClass('active')
+})
 
-function shuffleArray(array) {
-  for (var i = array.length - 1; i > 0; i--) {
-      var j = Math.floor(Math.random() * (i + 1));
-      var temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-  }
-}
+/*------- Instagram Scraper--------*/
 
-var photoPath = "./img/"
-var photoArray = [
-  "canopy.jpg",
-  "door-sign.jpg",
-  "flower.jpg",
-  "gate-p.jpg",
-  "lady-puppy.jpg",
-  "palm-tree.jpg",
-  "patio-1.jpg",
-  "road.jpg",
-  "tree-2.jpg",
-  "branch.jpg",
-  "dual-trees.jpg",
-  "interior-1.jpg",
-  "interior-2.jpg"
-]
+// $.ajax({
+//   method: "GET",
+//   url: ""
+// }).done(function (data) {
+//   console.log("WORKING")
+//   console.log(data)
+// })
 
-shuffleArray(photoArray)
+$(document).ready(function () {
 
-for (i in photoArray) {
-  $('#masonry').append(`<div class="item"><img src="${photoPath + photoArray[i]}" alt="" /></div>`)
-}
+  var postPromise = getPosts('hotpinksunrise')
+
+  postPromise.then(function (posts) {
+    console.log(posts)
+  })
+
+})
 
 
 /**
